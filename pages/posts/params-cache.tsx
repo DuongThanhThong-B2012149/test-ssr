@@ -39,15 +39,7 @@ export default function ParamsPage({ query, post }: ParamsPageProps) {
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
 	context.res.setHeader('Cache-Control', 's-maxage=5')
-
 	await new Promise((res) => setTimeout(res, 3000))
-
-	// const postId = context.query.postId
-	// if (!postId) return { props: { query: context.query } }
-
-	// const response = await fetch(`https://js-post-api.herokuapp.com/api/posts/${postId}`)
-	// const data = await response.json()
-
 	return {
 		props: {
 			query: context.query,
